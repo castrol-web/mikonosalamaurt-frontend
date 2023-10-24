@@ -24,20 +24,20 @@ function handlenavbar(){
                 <div className={navshowing?"":"nav_content"} id="navbarSupportedContent" >
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item"  >
-                            <a className="nav-link active" aria-current="page" href="/" >Home</a>
+                            <Link className="nav-link active" aria-current="page"  to="/">Home</Link>
                         </li>
                         <li className="nav-item" id="navitem">
-                            <a className="nav-link" aria-current="page" href="/about">About</a>
+                            <Link className="nav-link" aria-current="page"  to="/about">About</Link>
                         </li>
                         <li className="nav-item" id="navitem">
-                            <a className="nav-link" aria-current="page" href="/gallery">Gallery</a>
+                            <Link className="nav-link" aria-current="page"  to="/gallery">Gallery</Link>
                         </li>
             
                         <li className="nav-item" id="navitem">
-                            <a className="nav-link" aria-current="page" href="/blogs">Blogs</a>
+                            <Link className="nav-link" aria-current="page"  to="/blogs">Blogs</Link>
                         </li>
                         <li className="nav-item" id="navitem">
-                            <a className="nav-link" aria-current="page" href="/contact">Contact</a>
+                            <Link className="nav-link" aria-current="page"  to="/contact">Contact</Link>
                         </li>
                     </ul>
                     <form className="d-flex">

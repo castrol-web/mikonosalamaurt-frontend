@@ -20,14 +20,14 @@ function App() {
   {/* static component for all the page is the navbar */}
   <Navbar/>
   <Routes>
-    <Route  index="/" element= {<Home />} />
-    <Route path='/about' element= {<About />} />
-    <Route path='/gallery' element= {<Gallery />} />
-    <Route path='/blogs/:id' element= {<BlogDetail />} />
-    <Route path='/blogs' element= {<Blogs />} />
-    <Route path='/contact' element= {<Contact />} />
-    <Route path="/registration" element={<RegistrationForm />}/>
-    <Route path='*' element= {<NotFound />} />
+    <Route    exact path="/" element= {<Home />} />
+    <Route    exact path="/about" element= {<About />} />
+    <Route    exact path="/gallery" element= {<Gallery />} />
+    <Route    exact path="/blogs/:id" element= {<BlogDetail />} />
+    <Route    exact path="/blogs" element= {<Blogs />} />
+    <Route    exact path="/contact" element= {<Contact />} />
+    <Route    exact path="/registration" element={<RegistrationForm />}/>
+    <Route    exact path="*" element= {<NotFound />} />
   </Routes>
   {/* another static component for all the pages is the footer */}
   <Footer/>
