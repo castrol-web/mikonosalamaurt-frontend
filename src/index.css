@@ -1,0 +1,170 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+
+
+:root{
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+
+    --transition: all 500ms ease;
+}
+
+body{
+    background-color: #F8F1F1;
+    font-family: 'Montserrat',sans-serif;
+    line-height: 1,7;
+    padding-top: 70px;
+}
+
+img{
+    object-fit: cover;
+}
+
+/*joining form styles generally */
+.form__heading-container{
+    text-align: center;
+}
+
+.parents_heading,.childs-heading{
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.Reg_logo{
+    height: 60px;
+}
+
+.form__wrapper{
+    border: 1px solid #F1D4E5;
+        border-radius: 1rem;
+    margin: 4rem;
+    padding: 2rem;
+}
+
+/* general style for the header */
+.Header{
+    margin-top: -0.2rem;
+    height: 20rem;
+    overflow: hidden;
+    border-bottom: 2px solid #B0A4A4;
+}
+
+.Header__container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background: black;
+}
+
+.Header__container-bg{
+    position: absolute;
+}
+
+.Header__container-bg img{
+    opacity: 0.5;
+}
+
+.Header__content{
+    position: relative;
+    width: 44%;
+    
+    text-align: center;
+    color: #F8F1F1;
+}
+
+.Header__content h2{
+    margin-top: 1.5rem;
+}
+
+.Header__content p{
+    color: rgba(255,255,255,0.7);
+}
+
+/* ABOUT US COMPONENT GENERAL STYLE */
+.about-us {
+    padding: 50px 0;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .about-image {
+    margin-bottom: 20px;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .about-text {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .about-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /*services header */
+  .services__header{
+    text-align: center;
+  }
+
+
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 1024px){
+   #logo-nav{
+        margin-left: -0.5rem;
+    }
+
+
+.Header__content{
+    width: 100%;
+}
+
+}
+
+
+
+/* MEDIA QUERIES (small screens) mobile devices*/
+@media screen and (max-width: 600px){
+
+    .section{
+        margin-top: 7rem;
+    }
+
+.Header__content{
+    width: var(--container-width-md);
+    padding: 3rem 0;
+}
+
+.Header__content p{
+    font-size: 0.85;
+}
+
+    }
+    
+

@@ -1,0 +1,141 @@
+/*search input */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0px;
+}
+
+.search-input {
+    width: 260px;
+    border-radius: 20px;
+    border: 1px solid rgb(171, 168, 168);
+    outline: none;
+    padding: 10px;
+    outline: none;
+    background-color: aqua;
+}
+
+.blog:hover {
+    transform: scale(1.07);
+    opacity: 75%;
+}
+
+.blog {
+    text-decoration: none;
+    color: black;
+}
+
+.blog_title {
+    text-align: center;
+}
+
+.blog__contents {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 5rem;
+    margin-top: 3rem;
+}
+
+.blog__avatar {
+    max-height: 55%;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+.blog__avatar,
+#blog_img {
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.blog_description {
+    text-align: center;
+    padding: 20px;
+    max-height: 80%;
+    max-width: 100%;
+    background-color: antiquewhite;
+    margin-left: 3rem;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 10px 0px 5px -2px gray;
+}
+
+.blog__authoranddate {
+    position: relative;
+    top: -19rem;
+    left: 52rem;
+    max-width: 30rem;
+}
+
+.blogdetails {
+    margin-top: 2rem;
+}
+
+.blog__navigations {
+    position: relative;
+    top: -5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+
+.blog_title {
+    font-family: 'Lobster', cursive;
+    color: #F31559;
+}
+
+.error_message{
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+/* MEDIA QUERIES (small screens) */
+@media screen and (max-width: 600px) {
+    .blog__contents {
+        grid-template-columns: 1fr;
+    }
+
+    .blog_description {
+        text-align: center;
+        width: 300px;
+    }
+
+    .blog__authoranddate {
+        position: revert;
+        margin-top: -23rem;
+    }
+    .blog__navigations {
+        margin-top: 10rem;
+        margin-bottom: -2rem;
+    }
+
+    .blog__avatar{
+        position: absolute;
+        text-align: center;
+        margin: 0 auto;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 1024px){
+    .blog__authoranddate {
+        position: revert;
+        margin-top: -20rem;
+    }
+
+    .blog__avatar {
+        text-align: center;
+    }
+
+    .blog__avatar ,
+    #blog_img{
+      height: 700px;
+      width: 340px;
+    }
+}

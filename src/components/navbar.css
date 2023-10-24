@@ -1,0 +1,39 @@
+#logo-nav{
+    height: 40px;
+    margin-left: 1rem;
+}
+
+#navbar{
+    background-color: #E57C23;
+}
+
+
+.nav-link{
+    word-spacing: 9rem;
+}
+
+
+
+
+.section__header{
+    display: inline-flex;
+    gap: 1rem;
+    text-align: center;
+}
+
+.section__header span{
+    color: #FEB139;
+}
+
+/* faq header style */
+.faq__header{
+    text-align: center;
+    margin-top: 70px;
+}
+
+@media screen and (max-width: 600px){
+    .nav_content{
+        position: absolute;
+        bottom: 70px;
+    }
+}
