@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import html2canvas from 'html2canvas';
 import { URL } from '../App';
+import {v4 as uuidv4} from 'uuid';
 
 
 const RegistrationForm = () => {
@@ -21,11 +22,31 @@ const RegistrationForm = () => {
     const [childLName, setChildLName] = useState("");
     const [DOB, setDOB] = useState("");
     const [gender, setGender] = useState("Male");
-    const [nationality, setNationality] = useState("Tanzania");
+    const [nationality, setNationality] = useState();
     // checking whether the child has allergies or not
     const [hasAllergies, setHasAllergies] = useState(false);
     const [Allergy, setAllergy] = useState('')
+    const [countryState, setCountryState] = useState({
+        countries: [],
+    });
 
+    //countries selection handling (function within a function)
+    useEffect(() => {
+        const getCountry = async () => {
+            try {
+                const response = await axios.get("https://restcountries.com/v3.1/all");
+                setCountryState((prevCountryState) => ({
+                    ...prevCountryState,
+                    countries: response.data,
+                }));
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getCountry();
+    }, []);
+    //destructring country array
+    const { countries } = countryState;
 
     //checking for logo has loaded
     const [logoLoaded, setLogoLoaded] = useState(false);
@@ -147,8 +168,8 @@ const RegistrationForm = () => {
         try {
             await axios.post(`${URL}/api/registration`, formData)
                 .then(res => {
-                    if (res.data ==="exist") {
-                        toast.warning("Email already exists please use another email",{
+                    if (res.data === "exist") {
+                        toast.warning("Email already exists please use another email", {
                             position: "top-center",
                             autoClose: 5000,
                             hideProgressBar: false,
@@ -186,7 +207,7 @@ const RegistrationForm = () => {
                         takeScreenshot();
                     }
                 })
-        } 
+        }
         catch (err) {
             toast.error(`${err},failed to submit`);
         }
@@ -311,16 +332,15 @@ const RegistrationForm = () => {
                                 <div className="col-md">
                                     <div className="form-floating">
                                         <select className="form-select" onChange={handleNationality} id="nationality" aria-label="nationality selected label" value={nationality}>
-                                            <option defaultValue="tanzania">Tanzania</option>
-                                            <option value="kenya">Kenya</option>
-                                            <option value="uganda">Uganda</option>
-                                            <option value="Rwanda">Rwanda</option>
-                                            <option value="Burundi">Burundi</option>
-                                            <option value="Sudan">Sudan</option>
-                                            <option value="Malawi">Malawi</option>
-                                            <option value="Ethiopia">Ethiopia</option>
-                                            <option value="United States">United States</option>
-                                            <option value="other">Other</option>
+                                            <option>--Select Nationality--</option>
+                                            {
+                                                countries.map(function(country){
+                                                    return(
+                                                        <option key={uuidv4()}  value={country.name.common}>{country.name.common}</option>
+                                                        );
+                                                })
+                                            }
+
                                         </select>
                                         <label htmlFor="nationality">Nationality</label>
                                     </div>
